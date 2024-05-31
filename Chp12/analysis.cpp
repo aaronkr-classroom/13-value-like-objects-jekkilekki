@@ -7,6 +7,7 @@
 #include "median.h"
 #include "Student_info.h"
 #include "Vec.h" // vector -> Vec
+#include "Str.h" // string -> Str
 
 bool did_all_hw(const Student_info& s) {
     return ((find(s.homework.begin(), s.homework.end(), 0)) == s.homework.end());
@@ -70,7 +71,7 @@ double average_analysis(const Vec<Student_info>& students) {
     return median(grades);
 }
 
-void write_analysis(ostream& out, const string& name,
+void write_analysis(ostream& out, const Str& name,
     double analysis(const Vec<Student_info>&),
     const Vec<Student_info>& did,
     const Vec<Student_info>& didnt) {

@@ -18,25 +18,25 @@ void loadGrades(ifstream&,
 	Vec<Student_info>&,
 	Vec<Student_info>&, 
 	Vec<Student_info>&,
-	string::size_type&
+	Str::size_type&
 );
 
 void fileSelect(int,
 	Vec<Student_info>&,
 	Vec<Student_info>&,
 	Vec<Student_info>&,
-	string::size_type&
+	Str::size_type&
 );
 
 int checkHw(Vec<Student_info>&, Vec<Student_info>&);
 
 // Overloaded from analysis.h - to handle a single Vec<Student_info> (not two)
-void write_analysis(ostream&, const string&,
+void write_analysis(ostream&, const Str&,
 	double analysis(const Vec<Student_info>&),
 	const Vec<Student_info>&,
-	string);
+	Str);
 
 void analyzeGrades(Vec<Student_info>&, Vec<Student_info>&);
-void showScores(Vec<Student_info>&, string::size_type&);
+void showScores(Vec<Student_info>&, Str::size_type&);
 
 #endif

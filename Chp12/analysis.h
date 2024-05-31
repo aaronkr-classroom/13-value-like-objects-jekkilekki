@@ -19,7 +19,7 @@ double average(const Vec<double>&);
 double average_grade(const Student_info&);
 double average_analysis(const Vec<Student_info>&);
 
-void write_analysis(ostream&, const string&,
+void write_analysis(ostream&, const Str&,
     double analysis(const Vec<Student_info>&),
     const Vec<Student_info>&,
     const Vec<Student_info>&);

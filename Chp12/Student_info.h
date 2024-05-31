@@ -5,13 +5,13 @@
 #define GUARD_Student_info
 
 #include <iostream>
-#include <string>
+#include "Str.h"
 #include "Vec.h" // vector -> Vec
 
 using namespace std;
 
 struct Student_info {
-    string name;
+    Str name;
     double midterm, final;
     Vec<double> homework;
 }; // 세미콜론을 잊지 않도록 주의

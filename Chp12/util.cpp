@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include "Vec.h" // vector -> Vec
+#include "Str.h" // string -> Str
 
 #include "analysis.h"
 #include "Student_info.h"
@@ -50,7 +51,7 @@ void loadGrades(ifstream& student_file,
 	Vec<Student_info>& students,
 	Vec<Student_info>& did, 
 	Vec<Student_info>& didnt,
-	string::size_type& maxlen) {
+	Str::size_type& maxlen) {
 
 	Student_info record;
 
@@ -78,7 +79,7 @@ void fileSelect(int fileChoice,
 	Vec<Student_info>& students,
 	Vec<Student_info>& did,
 	Vec<Student_info>& didnt,
-	string::size_type& maxlen
+	Str::size_type& maxlen
 ) {
 	// Clear all Vecs to start from scratch
 	students.clear();
@@ -119,10 +120,10 @@ int checkHw(Vec<Student_info>& did, Vec<Student_info>& didnt) {
 	cout << endl;
 }
 
-void write_analysis(ostream& out, const string& name,
+void write_analysis(ostream& out, const Str& name,
 	double analysis(const Vec<Student_info>&),
 	const Vec<Student_info>& students, 
-	string vec) {
+	Str vec) {
 
 	out << name << ": median(" << vec << ") = " << analysis(students) << endl;
 }
@@ -158,7 +159,7 @@ void analyzeGrades(Vec<Student_info>& did, Vec<Student_info>& didnt) {
 }
 
 
-void showScores(Vec<Student_info>& students, string::size_type& maxlen) {
+void showScores(Vec<Student_info>& students, Str::size_type& maxlen) {
 	cout << endl;
 
 	// 학생 정보를 알파벳순으로 정렬
@@ -169,7 +170,7 @@ void showScores(Vec<Student_info>& students, string::size_type& maxlen) {
 		// 이름과 오른쪽 공백을 포함하여 maxlen + 1개의
 		// 문자를 출력
 		cout << students[i].name
-			<< string(maxlen + 1 - students[i].name.size(), ' ');
+			<< Str(maxlen + 1 - students[i].name.size(), ' ');
 
 		// 종합 점수를 계산해 생성
 		try {
