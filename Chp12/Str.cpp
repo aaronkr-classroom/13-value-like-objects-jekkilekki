@@ -1,4 +1,5 @@
 #include <cctype>
+
 #include <cstring>
 #include <iostream>
 #include <iterator>
@@ -8,20 +9,19 @@
 using namespace std;
 
 ostream& operator<<(ostream& os, const Str& s) {
-	for (Str::size_type i = 0; i != s.size(); ++i) {
-		os << s[i];
-	}
+	copy(s.begin(), s.end(), ostream_iterator<char>(os));
 	return os;
 }
 
 // 입력 연산자
 istream& operator>>(istream& is, Str& s) {
 	// 기존의 값 제거
-	delete[] s.value;
+	if (s.value != 0)
+		delete[] s.value;
 	char c;
 
-	// 조건을 반펼하는 것 외의 동작은 없음.
-	while (is.get(c) && std::isspace(c));
+	while (is.get(c) && std::isspace(c))
+		; // 조건을 반펼하는 것 외의 동작은 없음.
 
 	// 읽을 문자가 남아 있다면 다음 공백 문자에
 	// 도달할 때까지 문자를 읽음.

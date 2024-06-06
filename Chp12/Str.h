@@ -5,6 +5,9 @@
 #include <cctype>
 #include <iterator>
 
+#include <iostream>
+#include <cstring>
+
 class Str {
 	// 입력 연산자
 	friend std::istream& operator>>(std::istream&, Str&);
@@ -78,7 +81,7 @@ public:
 			delete[] value;
 
 		// 새로운 value와 length 값을 저장하기
-		std::copy(s.value, s.value + s.length, new_value + new_length); // 확인
+		std::copy(s.value, s.value + s.length, new_value + length); // 확인
 		value = new_value;
 		length = new_length;
 		return *this;
